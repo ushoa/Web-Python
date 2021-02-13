@@ -28,19 +28,29 @@
         <div class='row  text-center'>
             <h3>Users List</h3>
         </div>
-        {% for row in usersList %}
-        <div class='row'>
-            <div class='col'>
-                {{row['_id']}}
-            </div>
-            <div class='col'>
-                {{row['user_name']}}
-            </div>
-            <div class='col'>
-                {{row['email']}}
-            </div>
-        </div>
-        {% endfor %}} {{usersList}}
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">User</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Estate</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in usersList %}
+                <tr>
+                    <td>{{row['user_name']}}</td>
+                    <td>{{row['email']}}</td>
+                    <td>Estado</td>
+                    <td>
+                        <a href="#" class='btn btn-sm btn-info'>Ver</a>
+                        <a href="#" class='btn btn-sm btn-danger'>Suspender</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 
